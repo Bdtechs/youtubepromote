@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Views and Subscribers Booster</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Home Page -->
+    <header id="home">
+        <div class="title-section">
+            <h1>Increase Your Views and Subscribers</h1>
+            <img src="https://images.app.goo.gl/MZWZbiwvfgG2QbpK7" alt="YouTube Logo" class="bg-logo">
+            <img src="https://images.app.goo.gl/CuQytyfRN5AeiPcQ6" alt="Growth Graph" class="bg-graph">
+        </div>
+        <div class="down-arrow">
+            <span>&#8595;</span>
+        </div>
+    </header>
+
+    <main>
+        <section id="channel-link-section">
+            <h2>Enter Your YouTube Channel Link</h2>
+            <input type="text" id="channel-link" placeholder="Paste your YouTube channel link here">
+            <button id="next-btn">Next</button>
+        </section>
+
+        <!-- Profile Page -->
+        <section id="profile-page" class="hidden">
+            <div class="profile-details">
+                <img id="channel-logo" src="" alt="Channel Logo">
+                <h2 id="channel-name">Channel Name</h2>
+            </div>
+            <div class="stats-section">
+                <div class="stat-box" id="user-points">Points: 0</div>
+                <div class="stat-box" id="earn-points">Earn Points</div>
+                <div class="stat-box" id="boost-channel">Increase Views/Subscribers</div>
+            </div>
+            <div class="description">
+                <h3>How Our Platform Works</h3>
+                <p>Earn points by engaging with others' content. Use those points to promote your own channel or videos. Join our community and grow together!</p>
+            </div>
+        </section>
+
+        <!-- Earn Points Page -->
+        <section id="earn-points-page" class="hidden">
+            <h2>Earn Points</h2>
+            <div id="tasks-container">
+                <!-- Task items will be dynamically added here -->
+            </div>
+            <button id="go-back">Back</button>
+        </section>
+
+        <!-- Boost Channel Page -->
+        <section id="boost-channel-page" class="hidden">
+            <h2>Boost Your Channel</h2>
+            <div id="boost-options">
+                <button id="increase-subscribers">Increase Subscribers</button>
+                <button id="increase-views">Increase Views</button>
+            </div>
+
+            <!-- Subscribers Layout -->
+            <div id="subscribers-layout" class="hidden">
+                <h3>Set Subscriber Increase Goal</h3>
+                <input type="number" id="subscribers-goal" placeholder="Enter number of subscribers">
+                <p>Points Required: <span id="subscribers-points">0</span></p>
+                <button id="add-subscribers-task">Add Task</button>
+                <p id="insufficient-points-subs" class="error hidden">Insufficient Points!</p>
+            </div>
+
+            <!-- Views Layout -->
+            <div id="views-layout" class="hidden">
+                <h3>Set Views Increase Goal</h3>
+                <input type="number" id="views-goal" placeholder="Enter number of views">
+                <p>Points Required: <span id="views-points">0</span></p>
+                <button id="add-views-task">Add Task</button>
+                <p id="insufficient-points-views" class="error hidden">Insufficient Points!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Views & Subscribers Booster Platform</p>
+    </footer>
+</body>
+</html>

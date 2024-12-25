@@ -1,0 +1,189 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.hidden {
+    display: none;
+}
+
+header {
+    background: linear-gradient(to bottom, #ff0000, #ff5757);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header .title-section h1 {
+    font-size: 2.5em;
+    margin: 10px 0;
+}
+
+header .bg-logo,
+header .bg-graph {
+    max-width: 150px;
+    display: inline-block;
+    margin: 10px;
+}
+
+header .down-arrow {
+    font-size: 2em;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* Main Sections */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+#channel-link-section input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#channel-link-section button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#channel-link-section button:hover {
+    background-color: #218838;
+}
+
+/* Profile Page */
+#profile-page {
+    background-image: url('https://images.app.goo.gl/MZWZbiwvfgG2QbpK7');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.profile-details img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.profile-details h2 {
+    font-size: 1.5em;
+}
+
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.stat-box {
+    padding: 20px;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.stat-box:hover {
+    background-color: #218838;
+}
+
+.description {
+    margin-top: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Earn Points Page */
+#tasks-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#tasks-container .task-item {
+    width: 300px;
+    margin: 10px;
+    padding: 15px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#tasks-container .task-item:hover {
+    background-color: #0056b3;
+}
+
+#error-msg {
+    color: red;
+    font-size: 1em;
+    display: none;
+}
+
+#go-back {
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#go-back:hover {
+    background-color: #5a6268;
+}
+
+/* Boost Channel Page */
+#boost-options button {
+    padding: 15px 20px;
+    margin: 10px;
+    font-size: 1.2em;
+    background-color: #ffc107;
+    color: #212529;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#boost-options button:hover {
+    background-color: #e0a800;
+}
+
+/* Subscribers & Views Layout */
+#subscribers-layout,
+#views-layout {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 500px;
+}
+
+#error-msg {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 10px;
+    display: none;
+}

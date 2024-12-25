@@ -1,0 +1,140 @@
+// JavaScript for Website Functionality
+
+document.addEventListener('DOMContentLoaded', () => {
+    const nextBtn = document.getElementById('next-btn');
+    const channelLinkInput = document.getElementById('channel-link');
+    const profilePage = document.getElementById('profile-page');
+    const channelLogo = document.getElementById('channel-logo');
+    const channelName = document.getElementById('channel-name');
+    const earnPointsBtn = document.getElementById('earn-points');
+    const boostChannelBtn = document.getElementById('boost-channel');
+    const earnPointsPage = document.getElementById('earn-points-page');
+    const goBackBtn = document.getElementById('go-back');
+    const boostChannelPage = document.getElementById('boost-channel-page');
+    const increaseSubscribersBtn = document.getElementById('increase-subscribers');
+    const increaseViewsBtn = document.getElementById('increase-views');
+    const subscribersLayout = document.getElementById('subscribers-layout');
+    const viewsLayout = document.getElementById('views-layout');
+    const subscribersGoalInput = document.getElementById('subscribers-goal');
+    const viewsGoalInput = document.getElementById('views-goal');
+    const subscribersPoints = document.getElementById('subscribers-points');
+    const viewsPoints = document.getElementById('views-points');
+    const addSubscribersTask = document.getElementById('add-subscribers-task');
+    const addViewsTask = document.getElementById('add-views-task');
+    const insufficientPointsSubs = document.getElementById('insufficient-points-subs');
+    const insufficientPointsViews = document.getElementById('insufficient-points-views');
+    const tasksContainer = document.getElementById('tasks-container');
+
+    let userPoints = 20; // Example initial points for the user
+
+    // Add startup channel link to tasks
+    const startupTask = document.createElement('div');
+    startupTask.classList.add('task-item');
+    startupTask.innerHTML = `
+        <p>Subscribe to this channel to earn points!</p>
+        <a href="https://www.youtube.com/channel/UClSpJud-EfY7uL5E3ccqdVw" target="_blank">Visit Channel</a>
+    `;
+    tasksContainer.appendChild(startupTask);
+
+    // Go to Profile Page
+    nextBtn.addEventListener('click', () => {
+        const channelLink = channelLinkInput.value.trim();
+        if (channelLink) {
+            // Example: Simulating fetching channel info
+            channelLogo.src = 'https://via.placeholder.com/100';
+            channelName.textContent = 'Example Channel';
+
+            document.querySelector('section').classList.add('hidden');
+            profilePage.classList.remove('hidden');
+        } else {
+            alert('Please enter a valid channel link.');
+        }
+    });
+
+    // Navigate to Earn Points Page
+    earnPointsBtn.addEventListener('click', () => {
+        profilePage.classList.add('hidden');
+        earnPointsPage.classList.remove('hidden');
+    });
+
+    // Navigate to Boost Channel Page
+    boostChannelBtn.addEventListener('click', () => {
+        profilePage.classList.add('hidden');
+        boostChannelPage.classList.remove('hidden');
+    });
+
+    // Go Back to Profile Page
+    goBackBtn.addEventListener('click', () => {
+        earnPointsPage.classList.add('hidden');
+        boostChannelPage.classList.add('hidden');
+        profilePage.classList.remove('hidden');
+    });
+
+    // Increase Subscribers Layout
+    increaseSubscribersBtn.addEventListener('click', () => {
+        subscribersLayout.classList.remove('hidden');
+        viewsLayout.classList.add('hidden');
+    });
+
+    // Increase Views Layout
+    increaseViewsBtn.addEventListener('click', () => {
+        viewsLayout.classList.remove('hidden');
+        subscribersLayout.classList.add('hidden');
+    });
+
+    // Calculate Points for Subscribers Task
+    subscribersGoalInput.addEventListener('input', () => {
+        const goal = parseInt(subscribersGoalInput.value, 10) || 0;
+        subscribersPoints.textContent = goal * 2;
+    });
+
+    // Calculate Points for Views Task
+    viewsGoalInput.addEventListener('input', () => {
+        const goal = parseInt(viewsGoalInput.value, 10) || 0;
+        viewsPoints.textContent = goal * 2;
+    });
+
+    // Add Subscribers Task
+    addSubscribersTask.addEventListener('click', () => {
+        const requiredPoints = parseInt(subscribersPoints.textContent, 10);
+        if (userPoints >= requiredPoints) {
+            userPoints -= requiredPoints;
+
+            // Add new task to tasks container
+            const newTask = document.createElement('div');
+            newTask.classList.add('task-item');
+            newTask.innerHTML = `
+                <p>Subscribe to a new channel to earn points!</p>
+                <a href="#" target="_blank">Visit Channel</a>
+            `;
+            tasksContainer.appendChild(newTask);
+
+            alert('Subscribers task added successfully!');
+        } else {
+            insufficientPointsSubs.classList.remove('hidden');
+            setTimeout(() => insufficientPointsSubs.classList.add('hidden'), 3000);
+        }
+    });
+
+    // Add Views Task
+    addViewsTask.addEventListener('click', () => {
+        const requiredPoints = parseInt(viewsPoints.textContent, 10);
+        if (userPoints >= requiredPoints) {
+            userPoints -= requiredPoints;
+
+            // Add new task to tasks container
+            const newTask = document.createElement('div');
+            newTask.classList.add('task-item');
+            newTask.innerHTML = `
+                <p>Watch a video to earn points!</p>
+                <a href="#" target="_blank">Watch Video</a>
+            `;
+            tasksContainer.appendChild(newTask);
+
+            alert('Views task added successfully!');
+        } else {
+            insufficientPointsViews.classList.remove('hidden');
+            setTimeout(() => insufficientPointsViews.classList.add('hidden'), 3000);
+        }
+    });
+});
